@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Theoretical Analysis - LFSR Lab</title>
+    <style>
+        :root {
+            --bg-dark: #050A30;
+            --primary-cyan: #00FFFF;
+            --secondary-purple: #6A5ACD;
+            --accent-blue: #303F9F;
+            --text-white: #FFFFFF;
+            --border-glow: rgba(0, 255, 255, 0.3);
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-dark);
+            background: radial-gradient(circle at center, #050A30 0%, #000000 100%);
+            color: var(--text-white);
+            margin: 0;
+            padding: 40px 20px;
+            line-height: 1.6;
+        }
+
+        .theory-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.02);
+            backdrop-filter: blur(12px);
+            border: 1px solid var(--primary-cyan);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 0 30px var(--border-glow);
+        }
+
+        h1, h2 {
+            color: var(--primary-cyan);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-shadow: 0 0 10px var(--primary-cyan);
+        }
+
+        .theory-section {
+            margin-bottom: 30px;
+            padding: 20px;
+            background: rgba(106, 90, 205, 0.05);
+            border-radius: 10px;
+            border: 1px solid rgba(106, 90, 205, 0.2);
+        }
+
+        .formula-box {
+            background: #000;
+            color: var(--primary-cyan);
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            font-size: 1.2em;
+            margin: 20px 0;
+            border: 1px dashed var(--secondary-purple);
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        .highlight {
+            color: var(--primary-cyan);
+            font-weight: bold;
+        }
+
+        ul {
+            list-style-type: square;
+            padding-left: 20px;
+        }
+
+        ul li {
+            margin-bottom: 10px;
+        }
+
+        .btn-nav {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 25px;
+            border: 1px solid var(--primary-cyan);
+            color: var(--primary-cyan);
+            text-decoration: none;
+            text-transform: uppercase;
+            font-weight: bold;
+            border-radius: 5px;
+            transition: 0.3s;
+        }
+
+        .btn-nav:hover {
+            background: var(--primary-cyan);
+            color: var(--bg-dark);
+            box-shadow: 0 0 20px var(--primary-cyan);
+        }
+               .tab.active{
+         background:var(--secondary-purple);
+
+    }
+    .tab-bar{
+      display:flex;
+      background:#050814;
+      border-bottom:2px solid var(--accent-strong);
+    }
+    .tab{
+      padding:10px 18px;
+      cursor:pointer;
+      color:var(--text-main);
+      font-size:14px;
+    }
+    </style>
+</head>
+<body>
+<div class="tab-bar">
+        <div class="tab ">Aim</div>
+  <div class="tab ">Theory</div>
+  <div class="tab">Procedure</div>
+  <div class="tab">Experiment</div>
+  <div class="tab ">Viva-Voce</div>
+    <div class="tab active">Observation</div>
+      <div class="tab">Credits</div>
+    </div>
+    <div class="theory-container">
+        <h1 style="text-align: center;">Theoretical Observations</h1>
+        
+        <div class="theory-section">
+            <h2>1. Mathematical Foundation</h2>
+            <p>A Linear Feedback Shift Register (LFSR) is a shift register whose input bit is a linear function of its previous state. The most common linear function of single bits is <span class="highlight">XOR</span>. The operation is governed by a characteristic polynomial.</p>
+            
+            
+
+            <div class="formula-box">
+                $P(x) = x^n + c_{n-1}x^{n-1} + ... + c_1x + 1$
+            </div>
+            <p>Where $n$ is the number of stages (bits) and $c_i$ represents the tap coefficients (either 0 or 1).</p>
+        </div>
+
+        <div class="theory-section">
+            <h2>2. Maximal Length Sequences (m-sequences)</h2>
+            <p>It is observed that the LFSR cycles through a sequence of states. The maximum number of unique states an $n$-bit LFSR can have is:</p>
+            <div class="formula-box">
+                $L = 2^n - 1$
+            </div>
+            <p>This is called an <span class="highlight">m-sequence</span>. The "all-zero" state is excluded because the XOR sum of 0s is 0, which would result in the register remaining in that state forever.</p>
+        </div>
+
+        <div class="theory-section">
+            <h2>3. Observations on Tap Selection</h2>
+            <ul>
+                <li><span class="highlight">Primitive Polynomials:</span> If the feedback taps are chosen based on a primitive polynomial, the LFSR will achieve the maximum period.</li>
+                <li><span class="highlight">Non-Primitive Taps:</span> If the taps do not form a primitive polynomial, the sequence will repeat much sooner, resulting in multiple smaller cycles.</li>
+            </ul>
+        </div>
+
+        <div class="theory-section">
+            <h2>4. Properties of the Generated Sequence</h2>
+            <p>During the lab experiment, we observe the following properties of m-sequences:</p>
+            <ul>
+                <li><span class="highlight">Balance Property:</span> The number of 1s is always $(L+1)/2$ and the number of 0s is $(L-1)/2$.</li>
+                <li><span class="highlight">Run Property:</span> Short runs of 1s or 0s occur more frequently than long runs.</li>
+                <li><span class="highlight">Autocorrelation:</span> The sequence has a sharp autocorrelation peak, making it ideal for synchronization in CDMA systems.</li>
+            </ul>
+            
+            
+        </div>
+
+        <div style="text-align: center;">
+            <a href="experiment.html" class="btn-nav">Back to Experiment</a>
+            <a href="viva.html" class="btn-nav"> Quiz Time</a>
+        </div>
+    </div>
+
+</body>
+</html>

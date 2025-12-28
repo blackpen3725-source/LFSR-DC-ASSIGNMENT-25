@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Credits - Virtual Lab</title>
+    <style>
+        :root {
+            --bg-dark: #050A30;
+            --primary-cyan: #00FFFF;
+            --secondary-purple: #6A5ACD;
+            --accent-blue: #303F9F;
+            --text-white: #FFFFFF;
+            --border-glow: rgba(0, 255, 255, 0.3);
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-dark);
+            background: radial-gradient(circle at center, #050A30 0%, #000000 100%);
+            color: var(--text-white);
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .table {
+            display: flex;
+            flex-direction: column;
+            width: 90%;
+            max-width: 1000px;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            border: 1px solid var(--border-glow);
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+            overflow: hidden;
+        }
+
+        .header {
+            display: flex;
+            background: linear-gradient(90deg, var(--accent-blue), var(--secondary-purple));
+            color: var(--primary-cyan);
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-bottom: 2px solid var(--primary-cyan);
+            text-shadow: 0 0 8px rgba(0, 255, 255, 0.6);
+        }
+
+        .row {
+            display: flex;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .row:last-child {
+            border-bottom: none;
+        }
+
+        .row:hover {
+            background: rgba(0, 255, 255, 0.08);
+            transform: scale(1.01);
+            z-index: 10;
+        }
+
+        /* Zebra striping to match your logic */
+        .row:nth-child(even) {
+            background: rgba(106, 90, 205, 0.1);
+        }
+
+        .cell {
+            flex: 1;
+            padding: 15px 20px;
+            display: flex;
+            align-items: center;
+        }
+
+        /* Matches your specific flex logic for Name column */
+        .cell:first-child {
+            flex: 2;
+            color: var(--primary-cyan);
+            font-weight: 600;
+        }
+
+        b {
+            font-size: 1.1em;
+        }
+
+        /* Heading for the page */
+        .credits-title {
+            text-align: center;
+            color: var(--primary-cyan);
+            text-shadow: 0 0 10px var(--primary-cyan);
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+
+        .tab.active {
+            background: var(--secondary-purple);
+
+        }
+
+        .tab-bar {
+            display: flex;
+            background: #050814;
+            border-bottom: 2px solid var(--accent-strong);
+        }
+
+        .tab {
+            padding: 10px 18px;
+            cursor: pointer;
+            color: var(--text-main);
+            font-size: 14px;
+        }
+    </style>
+</head>
+
+
+<body>
+    <section>
+    <div class="tab-bar">
+        <div class="tab ">Aim</div>
+        <div class="tab">Theory</div>
+        <div class="tab">Procedure</div>
+        <div class="tab">Experiment</div>
+        <div class="tab">Viva-Voce</div>
+        <div class="tab">Observation</div>
+        <div class="tab active">Credits</div>
+    </div>
+    <div style="width: 100%;">
+        <h1 class="credits-title">Development Team</h1>
+        <h1 class="credits-title">B.TECH ECE-A Third Year</h1>
+        <div class="container">
+            
+            <div class="table">
+                <div class="header">
+                    <div class="cell">Name</div>
+                    <div class="cell">Roll Number</div>
+                    <div class="cell">Role</div>
+                </div>
+
+                <div class="row">
+                    <div class="cell">LENIN M M</div>
+                    <div class="cell">2301109060</div>
+                    <div class="cell">Front-End Designer <br> Video-Editing</div>
+                </div>
+
+                <div class="row">
+                    <div class="cell">GADAVARTHI SRI PAVAN TEJA</div>
+                    <div class="cell">2301109027</div>
+                    <div class="cell">Experiment-Simulation</div>
+                </div>
+
+                <div class="row">
+                    <div class="cell">CHOLLANGI SATYA SAI SREE</div>
+                    <div class="cell">2301209001</div>
+                    <div class="cell">Experiment-Simulation</div>
+                </div>
+
+                <div class="row">
+                    <div class="cell">SAILA ANUSHA</div>
+                    <div class="cell">2301109007</div>
+                    <div class="cell">Experiment-Simulation</div>
+                </div>
+
+                <div class="row">
+                    <div class="cell">JIJUL DAS K</div>
+                    <div class="cell">2301109043</div>
+                    <div class="cell">Report</div>
+                </div>
+
+                <div class="row">
+                    <div class="cell">ASWAJITH T</div>
+                    <div class="cell">2301109011</div>
+                    <div class="cell">Content-Writer</div>
+                </div>
+
+                <div class="row">
+                    <div class="cell">AMIT YADAV</div>
+                    <div class="cell">2301109006</div>
+                    <div class="cell">Content-Writer</div>
+                </div>
+
+                <div class="row">
+                    <div class="cell">AKSHAYKUMAR A R</div>
+                    <div class="cell">2301109003</div>
+                    <div class="cell">Video-editing</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </section>
+</body>
+
+</html>

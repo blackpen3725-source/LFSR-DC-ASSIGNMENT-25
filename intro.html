@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LFSR Virtual Lab - Welcome</title>
+    <style>
+        /* CSS Variables for Consistency */
+        :root {
+            --bg-dark: #050A30;
+            --primary-cyan: #00FFFF;
+            --secondary-purple: #6A5ACD;
+            --accent-blue: #303F9F;
+            --text-white: #FFFFFF;
+            --border-glow: rgba(0, 255, 255, 0.3);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-dark);
+            background: radial-gradient(circle at center, #050A30 0%, #000000 100%);
+            color: var(--text-white);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        /* Main Outer Section (Replaces your double-bordered section) */
+        .outer-frame {
+            border: 2px solid var(--primary-cyan);
+            border-radius: 20px;
+            padding: 10px;
+            box-shadow: 0 0 20px var(--border-glow);
+            max-width: 900px;
+            width: 100%;
+        }
+
+        .main-container {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 40px;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* Typography Styling */
+        h1,
+        h2 {
+            color: var(--primary-cyan);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-shadow: 0 0 10px var(--primary-cyan);
+            margin-bottom: 10px;
+        }
+
+        .lab-title {
+            font-size: 1.8em;
+            margin: 20px 0;
+        }
+
+        .course-code {
+            color: var(--text-white);
+            font-weight: bold;
+            letter-spacing: 1px;
+            opacity: 0.9;
+        }
+
+        .subtitle-red {
+            color: #ff4d4d;
+            /* Keeping a pop of red for the specific highlight */
+            font-size: 1.2em;
+            font-style: italic;
+            text-shadow: 0 0 5px rgba(255, 77, 77, 0.5);
+            margin: 15px 0;
+        }
+
+        .section-info {
+            color: var(--secondary-purple);
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        /* Button Grid Styling */
+        .button-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 20px;
+            margin: 40px 0;
+        }
+
+        .tag-button {
+            background: linear-gradient(135deg, var(--accent-blue) 0%, var(--secondary-purple) 100%);
+            color: white;
+            border: 1px solid var(--primary-cyan);
+            padding: 15px 20px;
+            border-radius: 8px;
+            font-size: 1em;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .tag-button:hover {
+            transform: translateY(-3px) scale(1.05);
+            background: var(--primary-cyan);
+            color: var(--bg-dark);
+            box-shadow: 0 0 20px var(--primary-cyan);
+        }
+
+        /* Footer Message */
+        .message {
+            margin-top: 30px;
+            padding: 15px;
+            background: rgba(0, 255, 255, 0.05);
+            border-radius: 10px;
+            border: 1px dashed var(--primary-cyan);
+            color: var(--text-white);
+            font-style: italic;
+        }
+
+        img {
+            max-width: 150px;
+            /* filter: drop-shadow(0 0 10px var(--primary-cyan)); */
+            margin-bottom: 10px;
+            background-color: white;
+            width: 70%;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="outer-frame">
+        <section class="main-container">
+            <img src="https://img.collegepravesh.com/2021/12/PTU-Puducherry-Logo.png" alt="Lab Logo">
+
+            <h1>Welcome</h1>
+            <h2>DEPARTMENT OF ELECTRONICS AND COMMUNICATION ENGINEERING</h2>
+            <h2 class="lab-title">Virtual Laboratory:<br>Linear Feedback Shift Register [LFSR]</h2>
+
+            <p class="course-code">DIGITAL COMMUNICATION EC214/EC216</p>
+            <p class="subtitle-red">PseudoRandom Sequence Generator</p>
+
+
+
+            <p class="section-info">ECE-A Section | Batch: 2023-2027</p>
+
+            <div class="button-grid">
+                <button class="tag-button" onclick="window.open('aim.html','_self')">Aim</button>
+                <button class="tag-button" onclick="window.open('Theory.html', '_self')">Theory</button>
+                <button class="tag-button" onclick="window.open('block.html','_self')">Block Diagram</button>
+                <button class="tag-button" onclick="window.open('experiment.html','_self')">Experiment</button>
+                <button class="tag-button" onclick="window.open('observation.html','_self')">Observation</button>
+                <button class="tag-button" onclick="window.open('viva.html','_self')">Viva-Voce</button>
+                <button class="tag-button" onclick="window.open('credit.html','_self')">Credits</button>
+            </div>
+
+            <div class="message" id="message">
+                "Virtual Experience of our Practical Laboratory!"
+            </div>
+        </section>
+    </div>
+
+</body>
+
+</html>
